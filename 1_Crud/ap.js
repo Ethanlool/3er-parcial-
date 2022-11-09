@@ -74,8 +74,8 @@ if(respuesta!=null){
 }
 
 
-const eliminarPost=()=>{
-    const id=document.querySelector("#deleteid").value=id;
+const eliminarPost=(id)=>{
+    document.querySelector("#deleteid").value=id;
 
 }
 
