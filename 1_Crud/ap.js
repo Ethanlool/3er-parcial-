@@ -10,8 +10,8 @@ let url="https://jsonplaceholder.typicode.com/posts";
                   <th scope="row">${item.id}</th>
                   <td>${item.title}</td>
                   <td>${item.body}</td>
-                  <td><button class="btn btn-primary btn-lg"><i class="bi bi-tiktok" data-bs-toggle="modal" data-bs-target="#editModal"></i> Editar </button> </td>
-                  <td> <button class="btn btn-danger btn-lg"><i class="bi bi-trash3-fill" data-bs-toggle="modal" data-bs-target="#deleteModal"></i> Eliminar </button></td>
+                  <td><button class="btn btn-primary btn-lg"><i class="bi bi-tiktok" data-bs-toggle="modal" data-bs-target="#editModal" onclick="cargarPosts(${item.id})")></i> Editar </button> </td>
+                  <td> <button class="btn btn-danger btn-lg"><i class="bi bi-trash3-fill" data-bs-toggle="modal" data-bs-target="#deleteModal" onclick="eliminarPost(${item.id})"></i> Eliminar </button></td>
                
                   
                   
@@ -19,6 +19,95 @@ let url="https://jsonplaceholder.typicode.com/posts";
               `;
     })
 }
+
+
+
+
+const cargarPosts=async(id)=>{    
+    const api= await fetch('https://jsonplaceholder.typicode.com/posts/'+id);
+    const respuesta=await api.json();
+    console.log(respuesta);
+    document.querySelector("#etitle").value=respuesta.title;
+    document.querySelector("#ebody").value=respuesta.body;
+    document.querySelector("#eid").value=respuesta.id;
+    document.querySelector("#euserid").value=respuesta.userId;
+}
+
+const guardarPost=async()=>{
+    let title=document.querySelector("#etitle").value;
+    let body=document.querySelector("#ebody").value;
+    let id=document.querySelector("#eid").value;
+    let userid=document.querySelector("#euserid").value;
+
+   const post={
+title:title,
+body:body,
+id:id,
+user:userid
+}
+    const api= await fetch('https://jsonplaceholder.typicode.com/posts/'+id, {
+    method: 'PUT',
+    body: JSON.stringify(post),
+    headers: {
+    'Content-type': 'application/json; charset=UTF-8',
+},
+}
+)
+const respuesta=api.json();
+console.log(respuesta)
+if(respuesta!=null){
+    Swal.fire(
+        'Eres un genio?',
+        'That thing is still around?',
+        'question'
+        )
+
+}else{
+    Swal.fire(
+        'Eres tonto?'
+        
+        )
+
+
+}
+
+}
+
+
+const eliminarPost=()=>{
+    const id=document.querySelector("#deleteid").value=id;
+
+}
+
+const deletePost=async ()=>{
+const id=document.querySelector("#deleteid").value;
+const api=await fetch(`https://jsonplaceholder.typicode.com/posts/`+id,{
+method:`DELETE`,
+
+})
+const respuesta=api.json();
+console.log(respuesta)
+if(respuesta!=null){
+    Swal.fire(
+        'sSEGUROOOO?',
+        'TONTO',
+        'no'
+        )
+
+}else{
+    Swal.fire(
+        'Eres tonto?',
+        'That thing is still around?',
+        'question'
+        )
+
+
+}
+
+
+
+}
+
 
 const addPost=async()=>{
     let titulo=document.querySelector("#titulo").value;
@@ -39,6 +128,7 @@ const addPost=async()=>{
     
     
     });
+    
 
 const respuesta=await api.json();
 tabla=document.querySelector("#lista");
@@ -69,3 +159,7 @@ if(respuesta!=null){
 
 }
 }
+
+
+
+

@@ -95,17 +95,19 @@
       
         <div class="mb-3">
           <label for="exampleFormControlInput1" class="form-label">TITLE</label>
-          <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+          <input type="text" class="form-control" id="etitle" placeholder="name@example.com">
         </div>
         <div class="mb-3">
           <label for="exampleFormControlTextarea1" class="form-label">BODY</label>
-          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+          <textarea class="form-control" id="ebody" rows="3"></textarea>
+          <input type="hidden" id="eid" value="0">
+          <input type="hidden" id="euserid" value="0">
         </div>
 
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-        <button type="button" class="btn btn-primary" >Gaurdar</button>
+        <button type="button" class="btn btn-primary" onclick="guardarPost()">Gaurdar</button>
       </div>
     </div>
   </div>
@@ -122,9 +124,10 @@
       <div class="modal-body">
       
       <h2>ESTAS SEGURO DE ELIMINAR ESTE POST? </h2>
+      <input type="hidden" id="deleteid">
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-success" data-bs-dismiss="modal">SI</button>
+        <button type="button" class="btn btn-success" data-bs-dismiss="modal" onclick="deletePost()">SI</button>
         <button type="button" class="btn btn-danger">NO</button>
       </div>
     </div>
