@@ -1,0 +1,16 @@
+*{
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    
+  }
+  body{
+   
+  }
+  #sip{
+    
+    display: grid;
+      grid-template-columns:4 3fr;
+      grid-template-rows:auto;
+      gap:5px;
+  }
