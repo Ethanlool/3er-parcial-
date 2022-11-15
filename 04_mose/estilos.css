@@ -62,7 +62,7 @@ body {
     -webkit-appearance: none;
     outline: 0;
     border: 0;
-    color: white;
+    color: rgb(228, 67, 67);
     background: color-primary;
     transition: 0.3s;
     
@@ -120,7 +120,8 @@ body {
 
 .btn2 {
   position: relative;
-  left: 250px;
+  
+  left: 340px;
   top: -200px;
   
   width: 30%;
@@ -129,7 +130,7 @@ body {
   -webkit-appearance: none;
   outline: 0;
   border: 0;
-  color: white;
-  background: color-primary;
+  color: rgb(73, 37, 235);
+  background: cyan;
   transition: 0.3s;
 }
