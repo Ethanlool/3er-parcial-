@@ -1,7 +1,8 @@
-const changeDog=async ()=>{
-    const api= await fetch("https://dog.ceo/api/breeds/image/random");
-    const response= await api.json();
-    const div=document.querySelector("#imageDog");
-    div.innerHTML=`<img src="${response.message}">`
-}
-setInterval(changeDog,3000);
+const loadBreed=async()=>{
+    const url=await fetch("https://dog.ceo/api/breeds/list/all");
+    const res=await url.json();
+    let comboBreed=document.querySelector("#breed");
+    data=res.message;
+ 
+    }
+
