@@ -1,37 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>cripto</title>
-    <link rel="stylesheet" href="estilo.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sono:wght@300&display=swap" rel="stylesheet">
+  <title>Criptomoneda</title>
+  
+  <link rel="stylesheet" href="estilo.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Bebas+Neue&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="skeleton.css">
 </head>
+
 <body onload="opcionesCriptomoneda()">
-    <div class="contenedor">
-        <div class="row">
-            <div class="one-half column">
-              <img src="1.jpg" alt="imagen cripto/">
-            </div>
-            <div class="one-half column"> 
-                <h1 class="head">Cotiza Criptomoneda el Segundo</h1>
-                <form >
-                    <div id="msj-error"></div>
-                    <label>Elige una Moneda</label>
-                    <select onchange="cotizarMoneda()" id="moneda">
-                        <option value="">Selecione -</option>
-                        <option value="USD">Dolar Estadounidense</option>
-                        <option value="MXN">Peso Méxicano</option>
-                        <option value="EUR">Euro</option>
-                        <option value="GPB">Libra Esterlina</option>
-                    </select>
-                    <label>Elige tu Criptomoneda</label>
-                    <select onchange="cotizarMoneda()" id="criptomoneda"></select>
-                    <button type="button" class="boton" onclick="cotizarMoneda()">Calcular</button>
-                </form>
-                <div class="resultado" id="divResultado"></div>
-            </div>
-        </div>
+  <div class="contenedor">
+    <div class="row">
+      <div class="one-half column">
+        <center><img src="https://imgs.search.brave.com/DA3ZzBwwxIVhmmY08cVuWEAyc1RWJJhoNVlQQjjEiNE/rs:fit:1024:658:1/g:ce/aHR0cDovL2NyaXB0/b2ZpbmFuY2lhLmNv/bS93cC1jb250ZW50/L3VwbG9hZHMvMjAx/OC8wOS9jcnlwdG9n/ZWxkLUlTU180MjA2/XzA1NjM4LTEwMjR4/NjU4LmpwZw"  width="400" alt="imagen cripto"/> </center>
+      </div>
+      <div class="one-half column">
+        <h1 class="head">Cotizar Criptomonedas</h1>
+        <form>
+          <div id="msj-error"></div>
+          <label>- Selecciona tu moneda -</label>
+          <select 
+          onchange="cotizarMoneda()"
+          id="moneda">
+            <option value="">- Selecciona - </option>
+            <option value="USD">DOLAR</option>
+            <option value="MXN">PESOS</option>
+               <option value="EUR">EURO</option>
+               <option value="GBP">LIBRA</option>
+          </select>
+          <label>- Elige la criptomoneda -</label>
+          <select
+          onchange="cotizarMoneda()"
+          id="criptomoneda">
+            
+          </select>
+          <button type="button" class="boton" onclick="cotizarMoneda()">CALCULAR</button>
+        </form>
+        <div class="si"> 
+        <div class="resultado" id="divResultado"></div>
+      </div>
     </div>
+    </div>
+    
+  </div>
+ 
+ <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.6.8/dist/sweetalert2.all.min.js">
+    
+ </script> <script src="ap.js"></script>
 </body>
 </html>
