@@ -100,19 +100,19 @@
         <form>
           <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Email address</label>
-            <input type="email" class="form-control" id="iniciarEmail" aria-describedby="emailHelp">
+            <input type="email" class="form-control" id="crearEmail" autocomplete="off" required>
             
           </div>
           <div class="mb-3">
             <label for="exampleInputPassword1" class="form-label">Password</label>
-            <input type="password" class="form-control" id="iniciarPassword">
+            <input type="password" class="form-control" id="crearPassword" autocomplete="off" required >
           </div>
           
         </form>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-danger" data-bs-dismiss="modal"><i class="bi bi-bag-fill"></i> Cancelar</button>
-        <button type="button" class="btn btn-success"><i class="bi bi-bookmark-heart"></i> Guardar</button>
+        <button type="button" class="btn btn-success" id="btnCrearCuenta"><i class="bi bi-bookmark-heart"></i> Crear</button>
       </div>
     </div>
   </div>
